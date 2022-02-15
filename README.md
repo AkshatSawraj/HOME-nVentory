@@ -2,7 +2,7 @@
 
 ## What project is it?
 
-> This is XML Parser, a project I did in the third semester of college <a href="https://www.sait.ca/programs-and-courses/diplomas/information-technology" target='_blank'>(SAIT)</a>.
+> This web application helps homeowners keep track of their inventory of household items for insurance purposes. I created this project in the third semester of college <a href="https://www.sait.ca/programs-and-courses/diplomas/information-technology" target='_blank'>(SAIT)</a>.
 
 ## Functionality
 
