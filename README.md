@@ -48,4 +48,4 @@ A system administrator is able to manage all aspects of the system below. A comp
 <p align="left"> <a href="https://www.java.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> </p>
 
 ## Structure of the program
-<img src="structure.jpg">
+<img src="structure.png">
