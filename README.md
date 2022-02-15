@@ -12,8 +12,7 @@ Registration:
 
 Users can register (create) an account consisting of an email address, password, first name, and last name.
 
-    When a user registers an account, an email is sent to the provided email address. The email contains a link which the user must click in order to activate their account. After the user has activated their account, a welcome email will be sent to them.
-    All passwords to be salted and hashed using a strong one-way encryption algorithm.
+    
 </li>
     <li>
 Authentication:
@@ -42,12 +41,8 @@ Manage Users, Roles and Categories:
 
 A system administrator is able to manage all aspects of the system below. A company administrator, on the other hand, can only manage users of the same company as them.
 
-    View all accounts.
-    Create, edit and delete an account. (Deleting an account will delete all of the associated items for that account.)
-    Promote and demote a user.
-    Search all items through the search box. It displays the item name and the owner of the item.
-    View, add and edit the list of categories. (Cannot delete categories)
-<ul>
+    
+</ul>
 
 ## Languages
 <p align="left"> <a href="https://www.java.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> </p>
