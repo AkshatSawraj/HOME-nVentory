@@ -6,26 +6,35 @@
 
 ## Functionality
 
-
+<ul>
+    <li>
 Registration:
 
 Users can register (create) an account consisting of an email address, password, first name, and last name.
 
     When a user registers an account, an email is sent to the provided email address. The email contains a link which the user must click in order to activate their account. After the user has activated their account, a welcome email will be sent to them.
     All passwords to be salted and hashed using a strong one-way encryption algorithm.
-
+</li>
+    <li>
 Authentication:
 
 Users can login using an email address and password and logout.
+        </li><li>
 Manage User Account:
 
 Users can edit their account information, but they cannot delete their own account.
+    </li>
+    <li>
 Reset password:
 
 If a user forgets their password, they will have the option to reset their password. If they choose to reset a password, they will receive an email containing a link which will send them to a page to enter a new password.
-Account Active/Inactive:
+</li>
+    <li>
+        Account Active/Inactive:
 
 Users can deactivate their account from the account page. If an account has been deactivated, the user cannot log in. Only a system administrator can reactive their account.
+        </li>
+    <li>
 Manage Inventory:
 
 A home inventory item consists of category, name, and price. Users can view, add, delete and edit their own items.
@@ -38,29 +47,10 @@ A system administrator is able to manage all aspects of the system below. A comp
     Promote and demote a user.
     Search all items through the search box. It displays the item name and the owner of the item.
     View, add and edit the list of categories. (Cannot delete categories)
-
-## What is XML?
-
-> Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
-> <a href="https://en.wikipedia.org/wiki/XML" target=" _blank">Learn more on Wikipedia</a>
+<ul>
 
 ## Languages
 <p align="left"> <a href="https://www.java.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> </p>
 
 ## Structure of the program
 <img src="structure.jpg">
-
-## Testing
-
-> Result of the JUnit Test
-<img src="MyArrayListTests.jpg">
-<img src="MySLLTests.jpg">
-<img src="MyStackTests.jpg">
-<img src="MyQueueTests.jpg">
-
-
-
-
-
-
-
