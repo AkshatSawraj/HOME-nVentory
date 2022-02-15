@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to XML Parser 👋</h1>
+<h1 align="center">Welcome to Home Inventory 👋</h1>
 
 ## What project is it?
 
