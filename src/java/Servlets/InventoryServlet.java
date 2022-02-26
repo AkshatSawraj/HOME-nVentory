@@ -40,8 +40,7 @@ public class InventoryServlet extends HttpServlet {
         user = email;
         try {
             List<Item> homeItems = (List<Item>) service.getAll(email);
-            
-            
+
             request.setAttribute("homeItems", homeItems);
         } catch (Exception ex) {
             Logger.getLogger(InventoryServlet.class.getName()).log(Level.SEVERE, null, ex);
@@ -79,7 +78,6 @@ public class InventoryServlet extends HttpServlet {
         InventoryService service = new InventoryService();
 
         String action = request.getParameter("action");
-        System.out.println(action);
 
         if (action.equals("Save")) {
 
@@ -100,19 +98,16 @@ public class InventoryServlet extends HttpServlet {
             }
 
             int inputCategoryID = Integer.parseInt(inputCategory);
-            System.out.println(inputCategoryID);
             for (int i = 0; i < categoryList.size(); i++) {
                 if (categoryList.get(i).getCategoryId() == inputCategoryID) {
                     category = categoryList.get(i);
                 }
             }
-            System.out.println(category.categoryName);
-//good 
+
             if (inputPrice > 0) {
 
                 Item item;
                 try {
-                    System.out.println("in try");
                     service.insert(category, inputName, inputPrice, user);
                     request.setAttribute("invalid", "Item has been sucessfully added.");
                     request.getSession().setAttribute("username", user);
@@ -134,11 +129,11 @@ public class InventoryServlet extends HttpServlet {
             String id = request.getParameter("itemID");
             int intId = Integer.parseInt(id);
             try {
-                service.delete(intId,user);
+                service.delete(intId, user);
                 request.setAttribute("invalid", "Item successfully deleted.");
                 request.setAttribute("deleted", true);
                 request.getSession().setAttribute("username", user);
-                
+
                 doGet(request, response);
             } catch (Exception ex) {
 
@@ -147,7 +142,6 @@ public class InventoryServlet extends HttpServlet {
         }
         if (action.equals("edit")) {
             try {
-                System.out.println("in edit try");
                 List<Item> homeItems = (List<Item>) service.getAll(user);
                 String id = request.getParameter("itemID");
                 int intId = Integer.parseInt(id);
@@ -157,7 +151,6 @@ public class InventoryServlet extends HttpServlet {
                         item = i;
                     }
                 }
-                System.out.println(item);
 
                 request.setAttribute("editcategory", item.getCategoryName());
                 request.setAttribute("editname", item.getItemName());
@@ -191,7 +184,7 @@ public class InventoryServlet extends HttpServlet {
                 doGet(request, response);
             } catch (Exception ex) {
                 request.setAttribute("invalid", "Error Occured Please try again");
-                
+
                 request.getSession().setAttribute("username", user);
 
                 doGet(request, response);
@@ -199,7 +192,6 @@ public class InventoryServlet extends HttpServlet {
 
         }
         if (action.equals("Undo")) {
-            System.out.println("in undo");
             ItemsDB db = new ItemsDB();
             try {
                 db.undo();

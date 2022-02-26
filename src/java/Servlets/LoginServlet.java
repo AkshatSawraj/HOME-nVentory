@@ -60,7 +60,6 @@ public class LoginServlet extends HttpServlet {
         } else if (user.getRole().equals("company admin") && user.isActive() == true) {
             UserDB db=new UserDB();
             try {
-                System.out.println(user.getEmail());
                 session.setAttribute("companyId", db.getCompanyID(user.getEmail()));
             } catch (SQLException ex) {
                 Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
@@ -70,7 +69,6 @@ public class LoginServlet extends HttpServlet {
             
             
         } else if (user.getRole().equals("regular user") && user.isActive() == true) {
-            System.out.println("inventory found");
             response.sendRedirect("inventory");
         } else {
             request.setAttribute("failed", "This user is not active!");

@@ -33,17 +33,14 @@ public class RegisterServlet extends HttpServlet {
             throws ServletException, IOException {
         UserDB db = new UserDB();
         String action = request.getParameter("action");
-        System.out.println(action);
         if (action.equals("Save")) {
             String email = request.getParameter("inputEmail");
             String password = request.getParameter("inputPassword");
             String firstName = request.getParameter("inputFirst");
             String lastName = request.getParameter("inputLast");
             try {
-                System.out.println("in try");
                 db.insert(new User(email, true, firstName, lastName, password, "regular user"));
                 request.setAttribute("message", "User Registered");
-                System.out.println("inserted");
                 doGet(request, response);
 
             } catch (Exception ex) {

@@ -74,7 +74,7 @@ public class UserDB {
                 + "FROM user u inner join role r on u.role=r.role_id where u.company_id =" + id + ";";
         try {
             statement = con.prepareStatement(query);
-            System.out.println(statement);
+           
             results = statement.executeQuery();
 
             while (results.next()) {
@@ -112,7 +112,7 @@ public class UserDB {
         try {
 
             statement = con.prepareStatement(query);
-            System.out.println(statement);
+            
             statement.executeUpdate();
         } finally {
             DBUtil.closePreparedStatement(statement);
@@ -141,8 +141,7 @@ public class UserDB {
             statement.setString(4, user.getLastName());
             statement.setString(5, user.getPassword());
             statement.setString(6, user.getRole());
-            System.out.println(statement);
-
+            
             statement.executeUpdate();
         } finally {
             DBUtil.closePreparedStatement(statement);
@@ -170,7 +169,6 @@ public class UserDB {
 
         try {
             statement = con.prepareStatement(query);
-            System.out.println(statement);
             statement.setBoolean(1, user.isActive());
             statement.setString(2, user.getFirstName());
             statement.setString(3, user.getLastName());
@@ -179,7 +177,6 @@ public class UserDB {
 
             statement.setString(6, user.getEmail());
 
-            System.out.println(statement);
             statement.executeUpdate();
 
         } finally {
@@ -206,7 +203,7 @@ public class UserDB {
             statement = con.prepareStatement(query);
             statement.setBoolean(1, false);
             statement.setString(2, user.getEmail());
-            System.out.println(statement);
+            
             statement.executeUpdate();
 
         } finally {
@@ -235,7 +232,6 @@ public class UserDB {
                     + "FROM user u inner join role r on u.role=r.role_id "
                     + "WHERE email ='" + email + "'";
             statement = con.prepareStatement(query);
-            System.out.println(statement);
             results = statement.executeQuery();
 
             results.next();
@@ -271,7 +267,7 @@ public class UserDB {
 
             String query = "SELECT company_id from user where email ='" + email + "';";
             statement = con.prepareStatement(query);
-            System.out.println(statement);
+            
             results = statement.executeQuery();
 
             results.next();
@@ -281,7 +277,7 @@ public class UserDB {
             DBUtil.closeResultSet(results);
             pool.freeConnection(con);
         }
-        System.out.println(id);
+        
         return id;
     }
 
@@ -307,7 +303,7 @@ public class UserDB {
             statement.setString(6, user.getRole());
             statement.setInt(7, companyID);
 
-            System.out.println(statement);
+        
 
             statement.executeUpdate();
         } finally {

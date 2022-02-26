@@ -39,7 +39,6 @@ public class CategoriesDB {
                 String categoryName = results.getString(2);
 
                 Category newCategory = new Category(categoryId, categoryName);
-                System.out.println(newCategory);
                 categoryList.add(newCategory);
             }
         } finally {
@@ -65,7 +64,6 @@ public class CategoriesDB {
 
             String query = "SELECT category_id ,category_name from category where category_id = " + id + "; ";
             statement = con.prepareStatement(query);
-            System.out.println(statement);
             results = statement.executeQuery();
 
             results.next();
@@ -96,7 +94,6 @@ public class CategoriesDB {
 
         try {
             statement = con.prepareStatement(query);
-            System.out.println(statement);
             statement.setString(1, category.getCategoryName());
             statement.setInt(2, category.getCategoryId());
 
@@ -124,8 +121,7 @@ public class CategoriesDB {
             statement = con.prepareStatement(query);
             statement.setInt(1, category.getCategoryId());
             statement.setString(2, category.getCategoryName());
-            System.out.println(statement);
-
+            
             statement.executeUpdate();
         } finally {
             DBUtil.closePreparedStatement(statement);

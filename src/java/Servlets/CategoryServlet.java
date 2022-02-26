@@ -46,7 +46,7 @@ public class CategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
         String action = request.getParameter("action");
-        System.out.println(action);
+       
         HttpSession session = request.getSession();
         if (action.equals("edit")) {
             try {

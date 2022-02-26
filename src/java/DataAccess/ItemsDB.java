@@ -23,7 +23,6 @@ import java.util.List;
 public class ItemsDB {
  private static Item deletedItem;
     public void update(Item item) throws SQLException {
-        System.out.println("in update");
         PreparedStatement statement = null;
         Connection con = null;
 
@@ -45,7 +44,6 @@ public class ItemsDB {
             statement.setString(2, item.getItemName());
             statement.setDouble(3, item.getPrice());
             statement.setInt(4, item.getItemId());
-            System.out.println(statement);
             statement.executeUpdate();
 
         } finally {
@@ -117,7 +115,6 @@ public class ItemsDB {
     }
 
     public void insert(Item item) throws Exception {
-        System.out.println("DataAccess.ItemsDB.insert()");
         PreparedStatement statement = null;
         Connection con = null;
 
@@ -135,7 +132,6 @@ public class ItemsDB {
             statement.setString(3, item.getItemName());
             statement.setDouble(4, item.getPrice());
             statement.setString(5, item.getOwner().getEmail());
-            System.out.println(statement);
             statement.executeUpdate();
         } finally {
             DBUtil.closePreparedStatement(statement);
@@ -189,7 +185,6 @@ public class ItemsDB {
 
     public void undo() throws Exception {
         InventoryService is=new InventoryService();
-        System.out.println(deletedItem);
         insert(deletedItem);
     }
 

@@ -29,9 +29,9 @@ public class AccountServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("user");
-        email=email.replace(" ", "+");
+        email = email.replace(" ", "+");
         this.username = email;
-        System.out.println(this.username);
+
         User user = new User();
         UserDB db = new UserDB();
         try {
@@ -39,7 +39,6 @@ public class AccountServlet extends HttpServlet {
         } catch (Exception ex) {
             Logger.getLogger(AccountServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println(user);
         request.setAttribute("editpassword", user.getPassword());
         request.setAttribute("editemail", user.getEmail());
         request.setAttribute("editfirstname", user.getFirstName());
@@ -52,7 +51,6 @@ public class AccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
-        System.out.println(action);
         HttpSession session = request.getSession();
         UserDB userDB = new UserDB();
         if (action.equals("saveEdit")) {
@@ -71,7 +69,6 @@ public class AccountServlet extends HttpServlet {
                 doGet(request, response);
             }
         } else if (action.equals("Deactivate")) {
-            System.out.println("in deactivate");
             User user = null;
             try {
                 user = userDB.getUserByEmail(username);
@@ -81,10 +78,9 @@ public class AccountServlet extends HttpServlet {
             } catch (Exception ex) {
                 Logger.getLogger(AccountServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
-                request.setAttribute("message", "Error Occured, Please Try again later");
-                doGet(request, response);
-            
-            
+            request.setAttribute("message", "Error Occured, Please Try again later");
+            doGet(request, response);
+
         }
     }
 

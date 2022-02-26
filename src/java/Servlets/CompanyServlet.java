@@ -52,10 +52,8 @@ public class CompanyServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         String action = request.getParameter("action");
-        System.out.println(action);
         if (action.equals("Show Users")) {
             this.companyID = Integer.parseInt(request.getParameter("compID"));
-            System.out.println(companyID);
             doGet(request, response);
         } else if (action.equals("delete")) {
             try {
@@ -63,7 +61,6 @@ public class CompanyServlet extends HttpServlet {
                 UserDB userDB = new UserDB();
                 User user = null;
                 user = (User) userDB.getUserByEmail(deleteName);
-                System.out.println(user);
                 if (user.getRole().equals("regular user")) {
                     userDB.delete(user);
                     request.setAttribute("message", "User deleted");
@@ -85,7 +82,6 @@ public class CompanyServlet extends HttpServlet {
             String addlastname = request.getParameter("addlastname");
 
             User user = new User(addemail, true, addfirstname, addlastname, addpassword, "regular user");
-            System.out.println(user);
             try {
                 userDB.insertByCompany(user, this.companyID);
                 request.setAttribute("message", "User Added");
@@ -109,7 +105,6 @@ public class CompanyServlet extends HttpServlet {
                 if (user.isActive() == true) {
                     request.setAttribute("isActive", "true");
                 } else {
-                    System.out.println("barb");
                     request.setAttribute("isActive", "false");
                 }
 
@@ -136,7 +131,6 @@ public class CompanyServlet extends HttpServlet {
                 doGet(request, response);
             }
         } else if (action.equals("Undo")) {
-            System.out.println("in undo");
             UserDB db = new UserDB();
             try {
                 db.undo(this.companyID);

@@ -36,7 +36,7 @@ public class InventoryService {
     public void delete(int id) throws Exception {
         ItemsDB itemDB = new ItemsDB();
         Item item = (Item) itemDB.get(id);
-        System.out.println(item);
+        
         itemDB.delete(item);
     }
     
@@ -45,7 +45,7 @@ public class InventoryService {
         Item item = (Item) itemDB.get(id);
         UserDB db=new UserDB();
         item.setOwner(db.getUserByEmail(email));
-        System.out.println(item);
+       
         itemDB.delete(item);
     }
 

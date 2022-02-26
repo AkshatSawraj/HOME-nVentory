@@ -48,7 +48,6 @@ public class AdminServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String action = request.getParameter("action");
-        System.out.println(action);
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute("email");
 
@@ -59,7 +58,6 @@ public class AdminServlet extends HttpServlet {
                 ItemsDB itemDB = new ItemsDB();
                 User user = null;
                 user = (User) userDB.getUserByEmail(deleteName);
-                System.out.println(user);
 
                 User admin = userDB.getUserByEmail(email);
                 if (!user.equals(admin)) {
@@ -87,7 +85,6 @@ public class AdminServlet extends HttpServlet {
             String addlastname = request.getParameter("addlastname");
 
             User user = new User(addemail, true, addfirstname, addlastname, addpassword, "regular user");
-            System.out.println(user);
             try {
                 userDB.insert(user);
                 request.setAttribute("message", "User Added");
@@ -140,7 +137,6 @@ public class AdminServlet extends HttpServlet {
                 doGet(request, response);
             }
         } else if (action.equals("Undo")) {
-            System.out.println("in undo");
             UserDB db = new UserDB();
             try {
                 db.undo();
