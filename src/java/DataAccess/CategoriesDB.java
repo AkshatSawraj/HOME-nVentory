@@ -6,7 +6,6 @@
 package DataAccess;
 
 import Models.Category;
-import Models.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
